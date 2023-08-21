@@ -6,8 +6,13 @@ function App() {
 
   return (
     <div className="App">
-      <button>Increment</button>
-      <button>Decrement</button>
+      <h1>{likes}</h1>
+      <button onClick={() => likes += 1}>
+       Increment
+      </button>
+      <button onClick={() => likes -= 1}>
+       Decrement
+      </button>
     </div>
   );
 }
