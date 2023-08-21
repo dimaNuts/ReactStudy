@@ -1,14 +1,18 @@
 import React, {useState} from 'react';
 import './styles/App.css';
-import PostItem from './components/PostItem';
+import PostList from './components/PostList';
 
 function App() {
-  const [value, setValue] = useState('ТЕКСТ В ИНПУТЕ');
+  const [posts, setPosts] = useState(
+    [{id:1, title: 'JavaScript', body: 'Description'}, 
+     {id:2, title: 'Java', body: 'Description'},
+     {id:3, title: 'Python', body: 'Description'},
+  ]);
 
 
   return (
     <div className="App">
-      <PostItem/>
+      <PostList posts={posts} title='Мои посты'/>
     </div>
   );
 }
