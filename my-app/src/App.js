@@ -2,7 +2,7 @@ import React from 'react';
 
 
 function App() {
-
+  let likes = 0;
 
   return (
     <div className="App">
