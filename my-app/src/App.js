@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 
 function App() {
-  let likes = 0;
+  const [count, setCount] = useState(5);
 
   return (
     <div className="App">
