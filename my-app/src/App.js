@@ -13,9 +13,18 @@ function App() {
   ]);
 
   const [title, setTitle] = useState('Example title');
+  const [body, setBody] = useState('Example body');
+
   const addNewPost = (e) => {
     e.preventDefault();
-    console.log(title);
+
+    const newPost = {
+      id: Date.now(),
+      title,
+      body
+    };
+
+    setPosts([...posts, newPost]);
   }
 
 
@@ -27,7 +36,11 @@ function App() {
          onChange={e => setTitle(e.target.value)}
          type="text"
          placeholder="Название поста"/>
-        <MyInput type="text" placeholder="Описание поста"/>
+        <MyInput
+         value={body}
+         onChange={e => setBody(e.target.value)}
+         type="text"
+         placeholder="Описание поста"/>
         <MyButton onClick={addNewPost}>Создать</MyButton>
       </form>
       <PostList posts={posts} title='Мой пост'/>
