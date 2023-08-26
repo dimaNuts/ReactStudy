@@ -3,6 +3,7 @@ import './styles/App.css';
 import PostList from './components/PostList';
 import PostForm from './components/PostForm';
 import MySelect from './components/UI/select/MySelect';
+import MyInput from './components/UI/input/MyInput';
 
 function App() {
   const [posts, setPosts] = useState(
@@ -11,6 +12,7 @@ function App() {
      {id:3, title: 'Python', body: 'Basic syntax'},
   ]);
   const [selectedSort, setSelectedSort] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const createPost = (newPost) => {
     setPosts([...posts, newPost])
@@ -31,6 +33,11 @@ function App() {
       <PostForm create={createPost}/>
       <hr style={{margin: '15px 0'}}/>
       <div>
+        < MyInput
+        value={searchQuery}
+        onChange={e => setSearchQuery(e.target.value)}
+        placeholder='Поиск...'
+        />
         <MySelect
         value={selectedSort}
         onChange={sortPosts}
